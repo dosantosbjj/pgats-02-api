@@ -9,7 +9,6 @@ describe('Cadastro de usuário', () => {
         const response = await request('http://localhost:3000')
           .post('/users/register')
           .send(postUser)
-        console.log(response.body)
         expect(response.status).eq(201)
         expect(response.body.username).eq(postUser.username)
         expect(response.body.favorecidos).deep.equal(postUser.favorecidos)
