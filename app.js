@@ -12,14 +12,14 @@ app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerDocument));
 app.use('/users', userController);
 app.use('/transfers', transferController);
 
-// Example fixture data for users
-const favorecidosFixture = [
+// Exemplo de dados para usuários e favorecidos
+const favorecidos = [
    { "username": "julio", "favorecidos": "priscila", "saldo": 10000 },
     { "username": "priscila", "favorecidos": "julio", "saldo": 10000 }
 ];
 
 app.get("/users", (req, res) => {
-  res.json(favorecidosFixture);
+  res.json(favorecidos);
 });
 
 module.exports = app;
