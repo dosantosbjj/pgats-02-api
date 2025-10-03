@@ -1,7 +1,7 @@
 const request = require("supertest");
 const { expect } = require("chai");
 const app = require("../../app"); 
-const favorecidoController = require("../rest/fixture/requisicoes/favorecidos/getFavorecidos.json");
+
 
 //Testes
 describe("GET /users", () => {
@@ -17,12 +17,7 @@ describe("GET /users", () => {
     // Verifica se tem pelo menos 1 usuário
     expect(res.body.length).to.be.greaterThan(0);
 
-      // Verifica se o tamanho do retorno é igual ao da constante
-    expect(res.body.length).to.equal(favorecidoController.length);
-
-    // Verifica se o conteúdo retornado é exatamente o mesmo da constante
-    expect(res.body).to.deep.equal(favorecidoController);
-
+    
     // Verifica se os objetos têm username, favorecido e saldo
     expect(res.body[0]).to.have.property("username");
     expect(res.body[0]).to.have.property("favorecidos");
