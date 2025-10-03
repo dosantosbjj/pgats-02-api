@@ -3,6 +3,7 @@ const swaggerUi = require('swagger-ui-express');
 const swaggerDocument = require('./swagger.json');
 const userController = require('./controller/userController');
 const transferController = require('./controller/transferController');
+const favorecidoController = require("../rest/fixture/requisicoes/favorecidos/getFavorecidos.json");
 
 const app = express();
 app.use(express.json());
@@ -12,14 +13,7 @@ app.use('/users', userController);
 app.use('/transfers', transferController);
 
 app.get("/users", (req, res) => {
-  try {
-    res.json([
-      { username: "julio", favorecidos: "priscila", saldo: 10000 },
-      { username: "priscila", favorecidos: "julio", saldo: 10000 }
-    ]);
-  } catch (error) {
-    res.status(500).json({ error: "Internal Server Error" });
-  }
+  res.json(favorecidoController);
 });
 
 module.exports = app;

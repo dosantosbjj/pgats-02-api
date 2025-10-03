@@ -1,0 +1,4 @@
+[
+      { "username": "julio", "favorecidos": "priscila", "saldo": 10000 },
+      { "username": "priscila", "favorecidos": "julio", "saldo": 10000 }
+]
