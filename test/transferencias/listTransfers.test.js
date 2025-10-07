@@ -1,6 +1,6 @@
 const { expect } = require('chai')
 const request = require('supertest')
-const postLogin = require('./rest/fixture/requisicoes/login/postLogin.json')
+const postLogin = require('../fixture/requisicoes/login/postLogin.json')
 
 
 describe('Listar Transferências', () => {
